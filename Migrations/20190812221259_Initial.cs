@@ -2,87 +2,87 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace UniversityRegistrar.Migrations
+namespace UniversitySweetShop.Migrations
 {
     public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Courses",
+                name: "Flavors",
                 columns: table => new
                 {
-                    CourseId = table.Column<int>(nullable: false)
+                    FlavorId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    CourseNumber = table.Column<int>(nullable: false)
+                    FlavorNumber = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Courses", x => x.CourseId);
+                    table.PrimaryKey("PK_Flavors", x => x.FlavorId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Students",
+                name: "Treats",
                 columns: table => new
                 {
-                    StudentId = table.Column<int>(nullable: false)
+                    TreatId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
                     EnrollmentDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Students", x => x.StudentId);
+                    table.PrimaryKey("PK_Treats", x => x.TreatId);
                 });
 
             migrationBuilder.CreateTable(
-                name: "CourseStudent",
+                name: "FlavorTreat",
                 columns: table => new
                 {
-                    CourseStudentId = table.Column<int>(nullable: false)
+                    FlavorTreatId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    StudentId = table.Column<int>(nullable: false),
-                    CourseId = table.Column<int>(nullable: false)
+                    TreatId = table.Column<int>(nullable: false),
+                    FlavorId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CourseStudent", x => x.CourseStudentId);
+                    table.PrimaryKey("PK_FlavorTreat", x => x.FlavorTreatId);
                     table.ForeignKey(
-                        name: "FK_CourseStudent_Courses_CourseId",
-                        column: x => x.CourseId,
-                        principalTable: "Courses",
-                        principalColumn: "CourseId",
+                        name: "FK_FlavorTreat_Flavors_FlavorId",
+                        column: x => x.FlavorId,
+                        principalTable: "Flavors",
+                        principalColumn: "FlavorId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_CourseStudent_Students_StudentId",
-                        column: x => x.StudentId,
-                        principalTable: "Students",
-                        principalColumn: "StudentId",
+                        name: "FK_FlavorTreat_Treats_TreatId",
+                        column: x => x.TreatId,
+                        principalTable: "Treats",
+                        principalColumn: "TreatId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseStudent_CourseId",
-                table: "CourseStudent",
-                column: "CourseId");
+                name: "IX_FlavorTreat_FlavorId",
+                table: "FlavorTreat",
+                column: "FlavorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CourseStudent_StudentId",
-                table: "CourseStudent",
-                column: "StudentId");
+                name: "IX_FlavorTreat_TreatId",
+                table: "FlavorTreat",
+                column: "TreatId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CourseStudent");
+                name: "FlavorTreat");
 
             migrationBuilder.DropTable(
-                name: "Courses");
+                name: "Flavors");
 
             migrationBuilder.DropTable(
-                name: "Students");
+                name: "Treats");
         }
     }
 }

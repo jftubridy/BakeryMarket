@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@model Registrar.Models.Course
+@model SweetShop.Models.Flavor
 
 <h2>Edit</h2>
 
@@ -10,7 +10,7 @@
 
 @using (Html.BeginForm())
 {
-    @Html.HiddenFor(model => model.CourseId)
+    @Html.HiddenFor(model => model.FlavorId)
 
     @Html.LabelFor(model => model.Name)
 

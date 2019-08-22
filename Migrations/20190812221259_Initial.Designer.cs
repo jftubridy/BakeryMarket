@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Registrar.Models;
+using SweetShop.Models;
 
-namespace UniversityRegistrar.Migrations
+namespace UniversitySweetShop.Migrations
 {
-    [DbContext(typeof(RegistrarContext))]
+    [DbContext(typeof(SweetShopContext))]
     [Migration("20190812221259_Initial")]
     partial class Initial
     {
@@ -19,62 +19,62 @@ namespace UniversityRegistrar.Migrations
                 .HasAnnotation("ProductVersion", "2.2.6-servicing-10079")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("Registrar.Models.Course", b =>
+            modelBuilder.Entity("SweetShop.Models.Flavor", b =>
                 {
-                    b.Property<int>("CourseId")
+                    b.Property<int>("FlavorId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CourseNumber");
+                    b.Property<int>("FlavorNumber");
 
                     b.Property<string>("Name");
 
-                    b.HasKey("CourseId");
+                    b.HasKey("FlavorId");
 
-                    b.ToTable("Courses");
+                    b.ToTable("Flavors");
                 });
 
-            modelBuilder.Entity("Registrar.Models.CourseStudent", b =>
+            modelBuilder.Entity("SweetShop.Models.FlavorTreat", b =>
                 {
-                    b.Property<int>("CourseStudentId")
+                    b.Property<int>("FlavorTreatId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CourseId");
+                    b.Property<int>("FlavorId");
 
-                    b.Property<int>("StudentId");
+                    b.Property<int>("TreatId");
 
-                    b.HasKey("CourseStudentId");
+                    b.HasKey("FlavorTreatId");
 
-                    b.HasIndex("CourseId");
+                    b.HasIndex("FlavorId");
 
-                    b.HasIndex("StudentId");
+                    b.HasIndex("TreatId");
 
-                    b.ToTable("CourseStudent");
+                    b.ToTable("FlavorTreat");
                 });
 
-            modelBuilder.Entity("Registrar.Models.Student", b =>
+            modelBuilder.Entity("SweetShop.Models.Treat", b =>
                 {
-                    b.Property<int>("StudentId")
+                    b.Property<int>("TreatId")
                         .ValueGeneratedOnAdd();
 
                     b.Property<DateTime>("EnrollmentDate");
 
                     b.Property<string>("Name");
 
-                    b.HasKey("StudentId");
+                    b.HasKey("TreatId");
 
-                    b.ToTable("Students");
+                    b.ToTable("Treats");
                 });
 
-            modelBuilder.Entity("Registrar.Models.CourseStudent", b =>
+            modelBuilder.Entity("SweetShop.Models.FlavorTreat", b =>
                 {
-                    b.HasOne("Registrar.Models.Course", "Course")
-                        .WithMany("Students")
-                        .HasForeignKey("CourseId")
+                    b.HasOne("SweetShop.Models.Flavor", "Flavor")
+                        .WithMany("Treats")
+                        .HasForeignKey("FlavorId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("Registrar.Models.Student", "Student")
-                        .WithMany("Courses")
-                        .HasForeignKey("StudentId")
+                    b.HasOne("SweetShop.Models.Treat", "Treat")
+                        .WithMany("Flavors")
+                        .HasForeignKey("TreatId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

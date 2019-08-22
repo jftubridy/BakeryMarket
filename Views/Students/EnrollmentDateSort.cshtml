@@ -3,19 +3,19 @@
 }
 
 @using System.Linq; 
-@using Registrar.Models;
-@model List<Registrar.Models.Student>;
+@using SweetShop.Models;
+@model List<SweetShop.Models.Treat>;
 
-<h1>Students By Name</h1>
+<h1>Treats By Name</h1>
 
 <ul>
-  @foreach(Student student in Model)
+  @foreach(Treat treat in Model)
   {
     
-      <li>@Html.ActionLink($"{student.Name}","Details", new { id = student.StudentId })</li>
-       <p> EnrollmentDate: @student.EnrollmentDate.ToString("d")</p> 
+      <li>@Html.ActionLink($"{treat.Name}","Details", new { id = treat.TreatId })</li>
+       <p> EnrollmentDate: @treat.EnrollmentDate.ToString("d")</p> 
 
   }
 </ul>
 
-<p>@Html.ActionLink("Add new Student", "Create")</p>
+<p>@Html.ActionLink("Add new Treat", "Create")</p>

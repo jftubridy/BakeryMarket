@@ -3,24 +3,24 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
 using System.IO;
 
-namespace Registrar.Models
+namespace SweetShop.Models
 {
-    public class RegistrarContextFactory : IDesignTimeDbContextFactory<RegistrarContext>
+    public class SweetShopContextFactory : IDesignTimeDbContextFactory<SweetShopContext>
     {
 
-        RegistrarContext IDesignTimeDbContextFactory<RegistrarContext>.CreateDbContext(string[] args)
+        SweetShopContext IDesignTimeDbContextFactory<SweetShopContext>.CreateDbContext(string[] args)
         {
             IConfigurationRoot configuration = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json")
                 .Build();
 
-            var builder = new DbContextOptionsBuilder<RegistrarContext>();
+            var builder = new DbContextOptionsBuilder<SweetShopContext>();
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
             builder.UseMySql(connectionString);
 
-            return new RegistrarContext(builder.Options);
+            return new SweetShopContext(builder.Options);
         }
     }
 }

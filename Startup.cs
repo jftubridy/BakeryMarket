@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using Registrar.Models;
+using SweetShop.Models;
 
-namespace Registrar
+namespace SweetShop
 {
     public class Startup
     {
@@ -24,7 +24,7 @@ namespace Registrar
         {
             services.AddMvc();
             services.AddEntityFrameworkMySql()
-        .AddDbContext<RegistrarContext>(options => options
+        .AddDbContext<SweetShopContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 

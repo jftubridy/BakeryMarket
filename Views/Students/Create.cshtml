@@ -2,20 +2,20 @@
   Layout = "_Layout";
 }
 
-@model Registrar.Models.Student
+@model SweetShop.Models.Treat
 
 <h4>Add a new task</h4>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
-    @Html.Label("Select Course")
-    @Html.DropDownList("CourseId")
+    @Html.Label("Select Flavor")
+    @Html.DropDownList("FlavorId")
 
 
     @Html.LabelFor(model => model.EnrollmentDate)
     @Html.TextBoxFor(model => model.EnrollmentDate)
 
-    <input type="submit" value="Add new student" class="btn btn-default" />
+    <input type="submit" value="Add new treat" class="btn btn-default" />
 }
-<p>@Html.ActionLink("Show all students", "Index")</p>
+<p>@Html.ActionLink("Show all treats", "Index")</p>

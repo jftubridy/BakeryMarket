@@ -2,15 +2,15 @@
     Layout="_Layout";
 }
 
-@model Registrar.Models.Course
+@model SweetShop.Models.Flavor
 
-<h4>Add new Course</h4>
+<h4>Add new Flavor</h4>
 
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name)
 
-    <input type="submit" value =" Add new Course" class ="btn btn-default"/>
+    <input type="submit" value =" Add new Flavor" class ="btn btn-default"/>
 }
-<p> @Html.ActionLink("Show all the Courses", "Index")</p>
+<p> @Html.ActionLink("Show all the Flavors", "Index")</p>
