@@ -1,0 +1,2 @@
+mysql local server refuses to come online, when I try and reconfigure it asks me to put in the password for the root account.
+I tried both epicodus and it seemed to freeze, but 3 or 4 minutes later it allowed me to go in, and had me make it a windows process.
