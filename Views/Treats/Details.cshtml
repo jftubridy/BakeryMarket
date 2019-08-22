@@ -10,13 +10,13 @@
 
 @if(@Model.Flavors.Count == 0)
 {
-  <p>This Treat does not belong to any flavors</p>
+  <p>This Treat does not have any flavors</p>
 }
 else
 {
-  <h4>Flavors the Treat belongs to:</h4>
+  <h4>Flavors the Treat has to:</h4>
   
-<p>@Html.DisplayNameFor(model => model.EnrollmentDate): @Html.DisplayFor(model => model.EnrollmentDate)</p>  
+<p>@Html.DisplayNameFor(model => model.BakeDate): @Html.DisplayFor(model => model.BakeDate)</p>  
   <ul>
   @foreach(var join in Model.Flavors)
   {

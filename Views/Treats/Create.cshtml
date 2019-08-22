@@ -4,7 +4,7 @@
 
 @model SweetShop.Models.Treat
 
-<h4>Add a new task</h4>
+<h4>Add a new Treat</h4>
 @using (Html.BeginForm())
 {
     @Html.LabelFor(model => model.Name)
@@ -13,8 +13,8 @@
     @Html.DropDownList("FlavorId")
 
 
-    @Html.LabelFor(model => model.EnrollmentDate)
-    @Html.TextBoxFor(model => model.EnrollmentDate)
+    @Html.LabelFor(model => model.BakeDate)
+    @Html.TextBoxFor(model => model.BakeDate)
 
     <input type="submit" value="Add new treat" class="btn btn-default" />
 }

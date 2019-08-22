@@ -29,7 +29,7 @@ namespace UniversitySweetShop.Migrations
                     TreatId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     Name = table.Column<string>(nullable: true),
-                    EnrollmentDate = table.Column<DateTime>(nullable: false)
+                    BakeDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

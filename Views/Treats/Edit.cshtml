@@ -6,7 +6,7 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this task: @Html.DisplayFor(model => model.Name)</h4>
+<h4>Edit this treat: @Html.DisplayFor(model => model.Name)</h4>
 
 @using (Html.BeginForm())
 {
@@ -15,8 +15,8 @@
     @Html.LabelFor(model => model.Name)
     @Html.EditorFor(model => model.Name)
 
-    @Html.LabelFor(model => model.EnrollmentDate)
-    @Html.EditorFor(model => model.EnrollmentDate)
+    @Html.LabelFor(model => model.BakeDate)
+    @Html.EditorFor(model => model.BakeDate)
 
     @Html.Label("Select Flavor")
     @Html.DropDownList("FlavorId")

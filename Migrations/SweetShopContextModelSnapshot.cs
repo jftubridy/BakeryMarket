@@ -54,7 +54,7 @@ namespace UniversitySweetShop.Migrations
                     b.Property<int>("TreatId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("EnrollmentDate");
+                    b.Property<DateTime>("BakeDate");
 
                     b.Property<string>("Name");
 

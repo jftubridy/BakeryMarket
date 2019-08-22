@@ -21,10 +21,10 @@ namespace SweetShop.Controllers
             return View(_db.Treats.ToList());
         }
 
-        public ActionResult EnrollmentDateSort()
+        public ActionResult BakeDateSort()
         {
 
-            return View("EnrollmentDateSort", _db.Treats.OrderBy(treat => treat.EnrollmentDate).ToList());
+            return View("BakeDateSort", _db.Treats.OrderBy(treat => treat.BakeDate).ToList());
         }
 
         public ActionResult Details(int id)
