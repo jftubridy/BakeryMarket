@@ -1,2 +1,5 @@
-mysql local server refuses to come online, when I try and reconfigure it asks me to put in the password for the root account.
-I tried both epicodus and it seemed to freeze, but 3 or 4 minutes later it allowed me to go in, and had me make it a windows process.
+I think we need to update the mysql installation process for windows.  Mine broke until I reconfigured it to be a windows process.
+
+This is still incomplete, lacking user authentication and very unpolished/no readme.  
+
+However the many to many works as well as crud for at least one of them, I haven't done extensive testing yet.
