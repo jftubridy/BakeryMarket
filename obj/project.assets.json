@@ -12165,9 +12165,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\josep\\desktop\\coding stuff\\BakeryMarket\\UniversityRegistrar.csproj",
-      "projectName": "UniversityRegistrar",
-      "projectPath": "C:\\Users\\josep\\desktop\\coding stuff\\BakeryMarket\\UniversityRegistrar.csproj",
+      "projectUniqueName": "C:\\Users\\josep\\desktop\\coding stuff\\BakeryMarket\\SweetShop.csproj",
+      "projectName": "SweetShop",
+      "projectPath": "C:\\Users\\josep\\desktop\\coding stuff\\BakeryMarket\\SweetShop.csproj",
       "packagesPath": "C:\\Users\\josep\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\josep\\desktop\\coding stuff\\BakeryMarket\\obj\\",
       "projectStyle": "PackageReference",
